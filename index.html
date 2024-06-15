@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .border{
+            border: 3px solid black;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            text-align: center;
+            padding: 40px;
+            background-color: yellowgreen;
+            width: 3in;
+            border-radius: 20px;
+        }
+
+        .button{
+            font-size: 10.9px;
+            justify-content: center;
+            align-items: center;
+            height: 0.6in;
+            width: 0.6in;
+            margin: 5px 5px 5px 5px;
+            border-radius: 10px;
+        }
+
+        .button:hover{
+            background-color: gray;
+        }
+
+        .button:active{
+            background-color: rgb(50, 50, 34);
+            color: white;
+        }
+
+        .screen{
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            justify-content: center;
+            border: 2px solid black;
+            height: 0.7in;
+            width: 269px;
+            border-radius: 5px;
+            vertical-align: middle;
+            background-color: aliceblue;
+            font-size: 0.3in;    
+            text-align: end;
+        }
+
+        #result{
+            margin: auto;
+            font-size: 0.4in;
+            margin-top: 13px;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div class="border">
+        <div class="screen">
+            <div style="margin-right: 10px;" id="result">
+                
+            </div>
+        </div>
+
+        <button class="button" onclick="clearScreen(); return false">C</button>
+        <button class="button" onclick="number('/'); return false">/</button>
+        <button class="button" onclick="number('*'); return false">*</button>
+        <button class="button" onclick="remove(); return false"><</button><br>
+        <button class="button" onclick="number('7'); return false">7</button>
+        <button class="button" onclick="number('8'); return false">8</button>
+        <button class="button" onclick="number('9'); return false">9</button>
+        <button class="button" onclick="number('-'); return false">-</button><br>
+        <button class="button" onclick="number('4'); return false">4</button>
+        <button class="button" onclick="number('5'); return false">5</button>
+        <button class="button" onclick="number('6'); return false">6</button>
+        <button class="button" onclick="number('+'); return false">+</button><br>
+        <button class="button" onclick="number('1'); return false">1</button>
+        <button class="button" onclick="number('2'); return false">2</button>
+        <button class="button" onclick="number('3'); return false">3</button>
+        <button class="button"; onclick="calculate(); return false">=</button><br>
+        <button class="button" onclick="number('0'); return false">0</button>
+        <button class="button" onclick="number('00'); return false">00</button>
+        <button class="button" onclick="number('.'); return false">.</button>
+        <button class="button">POWER</button>
+
+
+
+
+
+    </div>
+
+</body>
+
+    <script>
+        const screen = document.getElementById("result");
+        
+
+        function number(chara){
+            screen.innerHTML += chara;
+
+            
+
+        
+
+        }
+
+        function clearScreen(){
+            screen.innerHTML = '';
+        }
+
+        function calculate(){
+            screen.innerHTML = eval(screen.innerHTML);
+        }
+
+        function remove(){
+            let text = screen.textContent;
+
+            if(text.length > 0){
+                screen.textContent = text.slice(0, -1);
+            }
+        }
+
+        
+        
+    </script>
+</html>
